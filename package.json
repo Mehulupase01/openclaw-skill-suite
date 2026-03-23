@@ -1,0 +1,33 @@
+{
+  "name": "openclaw-skill-suite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Production-ready OpenClaw skills plus validation and publish tooling.",
+  "license": "MIT-0",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "validate": "tsx tools/validate-skills.ts --strict",
+    "package:skills": "tsx tools/package-skills.ts",
+    "test:node": "vitest run",
+    "test:python": "python tools/run_python_tests.py",
+    "test": "vitest run && python tools/run_python_tests.py",
+    "check": "tsx tools/validate-skills.ts --strict && tsx tools/package-skills.ts && vitest run && python tools/run_python_tests.py",
+    "clawhub": "clawhub",
+    "publish:check": "tsx tools/validate-skills.ts --strict && tsx tools/package-skills.ts",
+    "release:plan": "tsx tools/render-publish-commands.ts",
+    "release:publish:dry-run": "tsx tools/publish-all.ts",
+    "release:publish": "tsx tools/publish-all.ts --execute",
+    "release:set-homepages": "tsx tools/set-skill-homepages.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.1",
+    "clawhub": "0.8.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.4",
+    "yaml": "^2.8.1"
+  }
+}
