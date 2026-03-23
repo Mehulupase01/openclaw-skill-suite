@@ -17,6 +17,7 @@
     "check": "tsx tools/validate-skills.ts --strict && tsx tools/package-skills.ts && vitest run && python tools/run_python_tests.py",
     "clawhub": "clawhub",
     "publish:check": "tsx tools/validate-skills.ts --strict && tsx tools/package-skills.ts",
+    "clawhub:login:windows": "tsx tools/clawhub-login-windows.ts",
     "release:plan": "tsx tools/render-publish-commands.ts",
     "release:publish:dry-run": "tsx tools/publish-all.ts",
     "release:publish": "tsx tools/publish-all.ts --execute",

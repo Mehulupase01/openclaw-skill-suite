@@ -4,6 +4,7 @@ description: Analyze GitHub pull requests, summarize risk, and draft a reviewer 
 version: 0.1.0
 metadata:
   openclaw:
+    homepage: https://github.com/Mehulupase01/openclaw-skill-suite/tree/main/skills/code-review-bot
     primaryEnv: GITHUB_TOKEN
     requires:
       bins:

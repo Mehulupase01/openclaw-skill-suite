@@ -4,6 +4,7 @@ description: Coordinate meeting requests, proposed time slots, confirmations, an
 version: 0.1.0
 metadata:
   openclaw:
+    homepage: https://github.com/Mehulupase01/openclaw-skill-suite/tree/main/skills/smart-scheduler
     requires:
       bins:
         - python

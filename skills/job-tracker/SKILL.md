@@ -4,6 +4,7 @@ description: Track job applications, contacts, deadlines, and follow-up reminder
 version: 0.1.0
 metadata:
   openclaw:
+    homepage: https://github.com/Mehulupase01/openclaw-skill-suite/tree/main/skills/job-tracker
     requires:
       bins:
         - python

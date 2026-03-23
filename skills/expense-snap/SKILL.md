@@ -4,6 +4,7 @@ description: Capture receipt details, categorize spending, and generate monthly 
 version: 0.1.0
 metadata:
   openclaw:
+    homepage: https://github.com/Mehulupase01/openclaw-skill-suite/tree/main/skills/expense-snap
     requires:
       bins:
         - python

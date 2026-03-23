@@ -38,7 +38,7 @@
 1. Authenticate:
 
    ```bash
-   corepack pnpm exec clawhub login
+   corepack pnpm run clawhub:login:windows
    corepack pnpm exec clawhub whoami
    ```
 
