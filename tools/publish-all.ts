@@ -6,18 +6,19 @@ import { repoRoot } from "./lib/skills.ts";
 async function main() {
   const execute = process.argv.includes("--execute");
   const skills = await readReleaseManifest();
+  const command = process.platform === "win32" ? "corepack.cmd" : "corepack";
 
   for (const skill of skills) {
-    const command = buildPublishCommand(skill);
+    const preview = buildPublishCommand(skill);
     if (!execute) {
-      console.log(`[dry-run] ${command}`);
+      console.log(`[dry-run] ${preview}`);
       continue;
     }
 
-    const result = spawnSync("corepack", ["pnpm", "exec", "clawhub", "publish", skill.path, "--slug", skill.slug, "--name", skill.name, "--version", skill.version, "--tags", "latest", "--changelog", skill.changelog], {
+    const skillPath = path.isAbsolute(skill.path) ? skill.path : path.join(repoRoot, skill.path);
+    const result = spawnSync(command, ["pnpm", "exec", "clawhub", "publish", skillPath, "--slug", skill.slug, "--name", skill.name, "--version", skill.version, "--tags", "latest", "--changelog", skill.changelog], {
       cwd: repoRoot,
       stdio: "inherit",
-      shell: process.platform === "win32",
     });
     if (result.status !== 0) {
       process.exit(result.status ?? 1);
